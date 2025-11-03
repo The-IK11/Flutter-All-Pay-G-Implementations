@@ -1,4 +1,6 @@
+import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AllPaymentButtonScreen extends StatelessWidget {
 	const AllPaymentButtonScreen({super.key});
@@ -31,6 +33,7 @@ class AllPaymentButtonScreen extends StatelessWidget {
 	Widget _gatewayCard(BuildContext context,
 			{required IconData icon,
 			required String title,
+     VoidCallback? onTap,
 			String? subtitle,
 			Color? color}) {
 		color = color ?? Theme.of(context).colorScheme.primary;
@@ -39,7 +42,7 @@ class AllPaymentButtonScreen extends StatelessWidget {
 			shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 			child: InkWell(
 				borderRadius: BorderRadius.circular(12),
-				onTap: () => _showPlaceholder(context, title),
+				onTap: onTap ?? () { _showPlaceholder(context, title);},
 				child: Padding(
 					padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 14),
 					child: Row(
@@ -127,6 +130,9 @@ class AllPaymentButtonScreen extends StatelessWidget {
 							_sectionTitle('Local / Regional', 'Used for payments inside a specific country'),
 							spacer,
 							_gatewayCard(context,
+              onTap: (){
+                BkashPay.internals().BkashPayment(context);
+              },
 									icon: Icons.mobile_friendly,
 									title: 'bKash',
 									subtitle: 'Bangladesh — very common for BD apps',
