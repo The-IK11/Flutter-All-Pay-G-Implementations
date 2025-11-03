@@ -1,4 +1,5 @@
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -138,6 +139,9 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									subtitle: 'Bangladesh — very common for BD apps',
 									color: Colors.green),
 							_gatewayCard(context,
+              onTap: (){
+                NagadPay.internals().makePayment(context, 100.0);
+              },
 									icon: Icons.account_balance_wallet,
 									title: 'Nagad',
 									subtitle: 'Bangladesh — mobile wallet',
