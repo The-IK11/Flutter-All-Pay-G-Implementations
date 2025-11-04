@@ -1,5 +1,6 @@
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -152,6 +153,9 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									subtitle: 'Bangladesh — mobile banking',
 									color: Colors.teal),
 							_gatewayCard(context,
+							onTap: () {
+								SslCommerzPay.internals().sslcommerz(amount: 100.0);
+							},
 									icon: Icons.check,
 									title: 'SSLCOMMERZ',
 									subtitle: 'Bangladesh — supports bKash/Nagad/Card',

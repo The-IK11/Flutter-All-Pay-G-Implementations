@@ -38,6 +38,10 @@ dependencies:
   get: ^4.7.2 
   flutter_nagad: ^0.0.1
   nagad_payment_gateway: ^0.3.1
+  flutter_sslcommerz: ^3.0.1
+  flutter_dotenv: ^6.0.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -61,7 +65,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - .env
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
