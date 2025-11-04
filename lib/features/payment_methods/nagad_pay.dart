@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_nagad/flutter_nagad.dart';
 import 'package:get/get.dart';
 import 'package:nagad_payment_gateway/nagad_payment_gateway.dart';
+import 'package:all_payment_gateway/config/payment_config.dart';
 
 class NagadPay {
   NagadPay.internals();
 
   Nagad _getNagadInstance() {
+    final merchantId = PaymentConfig.nagadMerchantId;
+    final privateKey = PaymentConfig.nagadMerchantPrivateKey;
+    final publicKey = PaymentConfig.nagadPgPublicKey;
+    final isSandbox = PaymentConfig.nagadIsSandbox;
+    
+    // Debug logging
+    print('🔍 Nagad Config Debug:');
+    print('Merchant ID: $merchantId');
+    print('Private Key Length: ${privateKey.length}');
+    print('Public Key Length: ${publicKey.length}');
+    print('Is Sandbox: $isSandbox');
+    
     return Nagad(
       credentials: NagadCredentials(
-        merchantID: dotenv.env['NAGAD_MERCHANT_ID'] ?? '683002007104225',
-        merchantPrivateKey: dotenv.env['NAGAD_MERCHANT_PRIVATE_KEY'] ?? '',
-        pgPublicKey: dotenv.env['NAGAD_PG_PUBLIC_KEY'] ?? '',
-        isSandbox: dotenv.env['NAGAD_IS_SANDBOX'] == 'true',
+        merchantID: merchantId,
+        merchantPrivateKey: privateKey,
+        pgPublicKey: publicKey,
+        isSandbox: isSandbox,
       ),
     );
   }

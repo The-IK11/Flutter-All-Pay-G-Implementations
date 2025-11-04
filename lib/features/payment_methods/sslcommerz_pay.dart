@@ -1,7 +1,7 @@
 
 import 'dart:convert';
 
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:all_payment_gateway/config/payment_config.dart';
 import 'package:flutter_sslcommerz/model/SSLCSdkType.dart';
 import 'package:flutter_sslcommerz/model/SSLCommerzInitialization.dart';
 import 'package:flutter_sslcommerz/model/SSLCurrencyType.dart';
@@ -13,11 +13,6 @@ class SslCommerzPay {
 
   /// SSLCommerz Payment
   Future<void> sslcommerz({required double amount}) async {
-    // Load credentials from .env
-    final String storeId = dotenv.env['SSLCOMMERZ_STORE_ID'] ?? 'testbox';
-    final String storePassword = dotenv.env['SSLCOMMERZ_STORE_PASSWORD'] ?? 'qwerty';
-    final bool isSandbox = dotenv.env['SSLCOMMERZ_IS_SANDBOX'] == 'true';
-    
     // Generate unique transaction ID
     String uniqueTranId = "TRX${DateTime.now().millisecondsSinceEpoch}";
     
@@ -26,9 +21,9 @@ class SslCommerzPay {
         multi_card_name: "visa,master,bkash",
         currency: SSLCurrencyType.BDT,
         product_category: "Digital Product",
-        sdkType: isSandbox ? SSLCSdkType.TESTBOX : SSLCSdkType.LIVE,
-        store_id: storeId,
-        store_passwd: storePassword,
+        sdkType: PaymentConfig.sslCommerzIsSandbox ? SSLCSdkType.TESTBOX : SSLCSdkType.LIVE,
+        store_id: PaymentConfig.sslCommerzStoreId,
+        store_passwd: PaymentConfig.sslCommerzStorePassword,
         total_amount: amount,
         tran_id: uniqueTranId,
       ),
