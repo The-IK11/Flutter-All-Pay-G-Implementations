@@ -41,6 +41,7 @@ dependencies:
   flutter_sslcommerz: ^3.0.1
   flutter_dotenv: ^6.0.0
   shurjopay: ^2.0.8
+  uddoktapay: ^0.0.6
 
 
 dev_dependencies:
