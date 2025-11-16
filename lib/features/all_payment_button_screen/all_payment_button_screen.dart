@@ -1,6 +1,7 @@
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/surjopay_pay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -141,7 +142,15 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									color: Colors.green),
 							_gatewayCard(context,
               onTap: (){
-                NagadPay.internals().makePayment(context, 100.0);
+
+				ScaffoldMessenger.of(context).showSnackBar(
+					const SnackBar(
+						content: Text('Nagad is now unavailable'),
+						duration: Duration(seconds: 2),
+						behavior: SnackBarBehavior.floating,
+					),
+				);
+                //NagadPay.internals().makePayment(context, 100.0);
               },
 									icon: Icons.account_balance_wallet,
 									title: 'Nagad',
@@ -169,7 +178,11 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									icon: Icons.wb_sunny,
 									title: 'SurjoPay',
 									subtitle: 'Bangladesh — multi-currency payment solution',
-									color: Colors.amber),
+									color: Colors.amber,
+									onTap: () {
+										final surjoPay = SurjoPay.internals();
+										surjoPay.makePayment(context, 100.0);
+									}),
 							_gatewayCard(context,
 									icon: Icons.business,
 									title: 'UddoktaPay',

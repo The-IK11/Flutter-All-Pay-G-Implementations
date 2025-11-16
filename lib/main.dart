@@ -1,10 +1,14 @@
 import 'package:all_payment_gateway/features/all_payment_button_screen/all_payment_button_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:shurjopay/utilities/functions.dart';
 
 Future<void> main() async {
   // Ensure Flutter is initialized
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize shurjoPay
+  await initializeShurjopay(environment: "sandbox");
   
   // Load environment variables
   await dotenv.load(fileName: ".env");
