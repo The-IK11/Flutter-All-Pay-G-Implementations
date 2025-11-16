@@ -2,6 +2,7 @@ import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/surjopay_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/uddokta_pay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -184,6 +185,9 @@ class AllPaymentButtonScreen extends StatelessWidget {
 										surjoPay.makePayment(context, 100.0);
 									}),
 							_gatewayCard(context,
+							onTap: (){
+								UddoktaPayPayment.internals().makePayment(100.0, context);
+							},
 									icon: Icons.business,
 									title: 'UddoktaPay',
 									subtitle: 'Bangladesh — merchant payment gateway',
