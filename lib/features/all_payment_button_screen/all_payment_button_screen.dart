@@ -143,15 +143,16 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									color: Colors.green),
 							_gatewayCard(context,
               onTap: (){
+  //NagadPay.internals().makePayment(context, 10);
 
 				ScaffoldMessenger.of(context).showSnackBar(
 					const SnackBar(
-						content: Text('Nagad is now unavailable'),
+						content: Text('Nagad is now unavailable, Need sandbox credentials from Nagad team'),
 						duration: Duration(seconds: 2),
 						behavior: SnackBarBehavior.floating,
 					),
 				);
-                //NagadPay.internals().makePayment(context, 100.0);
+            
               },
 									icon: Icons.account_balance_wallet,
 									title: 'Nagad',
