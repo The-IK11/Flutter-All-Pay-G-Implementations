@@ -248,9 +248,20 @@ class AllPaymentButtonScreen extends StatelessWidget {
 
 							const SizedBox(height: 18),
 
-							// Card Processing
 							_sectionTitle('Card Processing', 'Processed via Stripe / SSLCOMMERZ'),
 							spacer,
+							_gatewayCard(context,
+									icon: Icons.payment,
+									title: 'Google Pay',
+									subtitle: 'Tap to pay with Google Pay',
+									color: Colors.black,
+									onTap: () { _showPlaceholder(context, 'Google Pay'); }),
+							_gatewayCard(context,
+									icon: Icons.apple,
+									title: 'Apple Pay',
+									subtitle: 'Tap to pay with Apple Pay',
+									color: Colors.black,
+									onTap: () { _showPlaceholder(context, 'Apple Pay'); }),
 							_gatewayCard(context,
 									icon: Icons.credit_card, title: 'Visa / Mastercard', subtitle: 'Via Stripe or SSLCOMMERZ'),
 							_gatewayCard(context,
