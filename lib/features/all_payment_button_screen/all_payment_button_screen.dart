@@ -2,6 +2,7 @@ import 'package:all_payment_gateway/features/payment_methods/amar_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/amar_launcher.dart';
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/razor_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/surjopay_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/uddokta_pay.dart';
@@ -227,6 +228,9 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									subtitle: 'Mostly for web / business users',
 									color: Colors.indigo),
 							_gatewayCard(context,
+							onTap: (){
+								RazorPay.internal().razorPay(100.0);
+							},
 									icon: Icons.payment,
 									title: 'Razorpay',
 									subtitle: 'Popular in India',

@@ -43,6 +43,7 @@ dependencies:
   shurjopay: ^2.0.6
   uddoktapay: ^0.0.6
   aamarpay: ^1.0.14
+  razorpay_flutter: ^1.4.0
 
 dev_dependencies:
   flutter_test:
