@@ -37,11 +37,12 @@ dependencies:
   bkash: 
   get: ^4.7.2 
   flutter_nagad: ^0.0.1
-  nagad_payment_gateway: ^0.3.1
+  nagad_payment_gateway: ^0.1.0
   flutter_sslcommerz: ^3.0.1
   flutter_dotenv: ^6.0.0
   shurjopay: ^2.0.6
   uddoktapay: ^0.0.6
+  aamarpay: ^1.0.14
 
 dev_dependencies:
   flutter_test:

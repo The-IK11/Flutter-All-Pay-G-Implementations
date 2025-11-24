@@ -1,3 +1,5 @@
+import 'package:all_payment_gateway/features/payment_methods/amar_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/amar_launcher.dart';
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
@@ -171,11 +173,25 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									title: 'SSLCOMMERZ',
 									subtitle: 'Bangladesh — supports bKash/Nagad/Card',
 									color: Colors.indigo),
-							_gatewayCard(context,
-									icon: Icons.account_balance_wallet,
-									title: 'AamarPay',
-									subtitle: 'Bangladesh — supports cards, mobile banking & wallets',
-									color: Colors.deepPurple),
+						 
+						
+													_gatewayCard(context,
+													onTap: () async {
+														// Launch Aamarpay: request payment URL first, then open webview
+														await launchAamarpay(context, amount: 200.0);
+
+														////With using AmarPay package
+														// Navigator.push(
+														// 	context,
+														// 	MaterialPageRoute(
+														// 		builder: (context) => MyPay(),
+														// 	),
+														// );
+													},
+														icon: Icons.account_balance_wallet,
+														title: 'AamarPay',
+														subtitle: 'Bangladesh — supports cards, mobile banking & wallets',
+														color: Colors.deepPurple),
 							_gatewayCard(context,
 									icon: Icons.wb_sunny,
 									title: 'SurjoPay',
