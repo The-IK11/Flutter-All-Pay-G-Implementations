@@ -53,4 +53,12 @@ class PaymentConfig {
     final value = dotenv.env['BKASH_IS_SANDBOX'];
     return value == 'true' || value == null || value.isEmpty;
   }
-}
+
+  /// Stripe Credentials
+    static String get striptPublishableKey =>
+      _getEnvOrDefault('STRIPE_PUBLISHABLE_KEY', 'test_publishable_key');
+
+
+    static String get stripeSecretKey =>
+      _getEnvOrDefault('STRIPE_SECRET_KEY', 'test_secret_key');
+}   

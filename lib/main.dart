@@ -1,6 +1,8 @@
+import 'package:all_payment_gateway/config/payment_config.dart';
 import 'package:all_payment_gateway/features/all_payment_button_screen/all_payment_button_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:shurjopay/utilities/functions.dart';
 
 Future<void> main() async {
@@ -10,9 +12,10 @@ Future<void> main() async {
   // Initialize shurjoPay
   await initializeShurjopay(environment: "sandbox");
   
+  
   // Load environment variables
   await dotenv.load(fileName: ".env");
-  
+   Stripe.publishableKey=PaymentConfig.stripeSecretKey;
   runApp(const MyApp());
 }
 

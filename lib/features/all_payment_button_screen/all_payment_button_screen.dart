@@ -4,6 +4,7 @@ import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/razor_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/stripe_payment.dart';
 import 'package:all_payment_gateway/features/payment_methods/surjopay_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/uddokta_pay.dart';
 import 'package:flutter/material.dart';
@@ -218,6 +219,9 @@ class AllPaymentButtonScreen extends StatelessWidget {
 							_sectionTitle('International', 'Used for global payments'),
 							spacer,
 							_gatewayCard(context,
+							onTap: () {
+							  StripePaymentService.internal().makePayment();
+							},
 									icon: Icons.credit_card,
 									title: 'Stripe',
 									subtitle: 'Easiest, secure, recommended',
