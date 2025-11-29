@@ -2,6 +2,7 @@ import 'package:all_payment_gateway/features/payment_methods/amar_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/amar_launcher.dart';
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/paypal_payment.dart';
 import 'package:all_payment_gateway/features/payment_methods/razor_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/stripe_payment.dart';
@@ -229,6 +230,16 @@ class AllPaymentButtonScreen extends StatelessWidget {
 							_gatewayCard(context,
 									icon: Icons.account_balance,
 									title: 'PayPal',
+									onTap: () {
+									// Navigate to the PayPal checkout view. PayPalPayment.MakePayment
+									// returns the widget (PaypalCheckoutView) and expects the current
+									// BuildContext for callbacks, so we push it as a new route.
+									Navigator.of(context).push(
+										MaterialPageRoute(
+											builder: (_) => PayPalPayment.internal().MakePayment(context),
+										),
+									);
+									},
 									subtitle: 'Mostly for web / business users',
 									color: Colors.indigo),
 							_gatewayCard(context,

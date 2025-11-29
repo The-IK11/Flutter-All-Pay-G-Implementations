@@ -61,4 +61,8 @@ class PaymentConfig {
 
     static String get stripeSecretKey =>
       _getEnvOrDefault('STRIPE_SECRET_KEY', 'test_secret_key');
+          static String get payPalSecretKey=>
+      _getEnvOrDefault('PAYPAL_CLIENT_SECRET', 'test_secret_key');
+          static String get payPalClientId =>
+      _getEnvOrDefault('PAYPAL_CLIENT_ID', 'test_client_id');
 }   
