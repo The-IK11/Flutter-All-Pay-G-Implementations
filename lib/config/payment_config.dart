@@ -65,4 +65,10 @@ class PaymentConfig {
       _getEnvOrDefault('PAYPAL_CLIENT_SECRET', 'test_secret_key');
           static String get payPalClientId =>
       _getEnvOrDefault('PAYPAL_CLIENT_ID', 'test_client_id');
+
+      static String get payStackPublicKey =>
+      _getEnvOrDefault('PAYSTACK_PUBLIC_KEY', 'test_public_key');
+
+      static String get payStackSecretKey =>
+      _getEnvOrDefault('PAYSTACK_SECRET_KEY', 'test_secret_key');
 }   
