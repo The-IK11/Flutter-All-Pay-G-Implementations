@@ -476,10 +476,10 @@ packages:
     dependency: "direct main"
     description:
       name: shurjopay
-      sha256: d658b6f74b90d6c301ecb87064cbbdd1b4df93149ded29f2926503db81c5d27a
+      sha256: "52cebb1650badf58065ce6b0af8f47498e756c357f281ac99b20630bfe168190"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.8"
+    version: "2.0.6"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -653,14 +653,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "15.0.2"
-  wave:
-    dependency: "direct main"
-    description:
-      name: wave
-      sha256: "01ebccb4caa9b150cbe4763aa2a23501bb582843a1f96281868bbb23cb4db1f9"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.2"
   web:
     dependency: transitive
     description:
