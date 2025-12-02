@@ -3,6 +3,7 @@ import 'package:all_payment_gateway/features/payment_methods/amar_launcher.dart'
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/paypal_payment.dart';
+import 'package:all_payment_gateway/features/payment_methods/paystake_payment_method.dart';
 import 'package:all_payment_gateway/features/payment_methods/razor_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/stripe_payment.dart';
@@ -251,6 +252,9 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									subtitle: 'Popular in India',
 									color: Colors.orange),
 							_gatewayCard(context,
+              onTap: () {
+                PayStackPayment.internal().makePayment(context);
+              },
 									icon: Icons.public,
 									title: 'Paystack',
 									subtitle: 'Used in Africa & Asia',

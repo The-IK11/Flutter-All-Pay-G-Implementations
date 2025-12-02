@@ -71,4 +71,13 @@ class PaymentConfig {
 
       static String get payStackSecretKey =>
       _getEnvOrDefault('PAYSTACK_SECRET_KEY', 'test_secret_key');
+     
+      // Flutter Wave Credentials
+      static String get flutterWavePublicKey =>
+      _getEnvOrDefault('FLUTTERWAVE_PUBLIC_KEY', 'test_public_key');
+      static String get flutterWaveSecretKey =>
+      _getEnvOrDefault('FLUTTERWAVE_SECRET_KEY', 'test_secret_key');
+      static String get flutterWaveEncryptionKey =>
+      _getEnvOrDefault('FLUTTERWAVE_ENCRYPTION_KEY', 'test  _encryption_key');
+
 }   

@@ -48,6 +48,8 @@ dependencies:
   flutter_paypal_payment: ^1.0.8
   shurjopay: ^2.0.8
   flutter_paystack_plus: ^2.0.4
+  wave: ^0.2.2
+  flutterwave_standard: ^1.1.0
 
 dev_dependencies:
   flutter_test:

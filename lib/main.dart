@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:shurjopay/utilities/functions.dart';
+import 'package:flutter_paystack_plus/flutter_paystack_plus.dart';
 
 Future<void> main() async {
   // Ensure Flutter is initialized
@@ -16,6 +17,12 @@ Future<void> main() async {
   // Load environment variables
   await dotenv.load(fileName: ".env");
    Stripe.publishableKey=PaymentConfig.stripeSecretKey;
+   
+  //  FlutterPaystackPlus().initialize(
+  //    publicKey: PaymentConfig.payStackPublicKey);
+    // PayStack().initialize(
+    //   publicKey: "pk_test_XXXXXXXXXXXXXXXXXXXX");
+   
   runApp(const MyApp());
 }
 
