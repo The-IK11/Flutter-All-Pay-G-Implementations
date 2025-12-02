@@ -1,6 +1,7 @@
 import 'package:all_payment_gateway/features/payment_methods/amar_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/amar_launcher.dart';
 import 'package:all_payment_gateway/features/payment_methods/bkash_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/flutter_wave_payment_gateway.dart';
 import 'package:all_payment_gateway/features/payment_methods/nagad_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/paypal_payment.dart';
 import 'package:all_payment_gateway/features/payment_methods/paystake_payment_method.dart';
@@ -260,6 +261,8 @@ class AllPaymentButtonScreen extends StatelessWidget {
 									subtitle: 'Used in Africa & Asia',
 									color: Colors.green),
 							_gatewayCard(context,
+							onTap: (){
+								FlutterWavePaymentGateway.interner().makePayment(context);} ,
 									icon: Icons.waves,
 									title: 'Flutterwave',
 									subtitle: 'Wide international support',
