@@ -1,0 +1,26 @@
+{
+  "provider": "apple_pay",
+  "data": {
+    "merchantIdentifier": "merchant.com.test.app",
+    "displayName": "Your Business Name",
+    "merchantCapabilities": [
+      "3DS",
+      "credit",
+      "debit"
+    ],
+    "supportedNetworks": [
+      "visa",
+      "masterCard",
+      "amex",
+      "discover"
+    ],
+    "countryCode": "US",
+    "currencyCode": "USD",
+    "paymentSummaryItems": [
+      {
+        "label": "Water Bottle",
+        "amount": "10.00"
+      }
+    ]
+  }
+}

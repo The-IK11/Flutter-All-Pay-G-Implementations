@@ -10,6 +10,7 @@ import 'package:all_payment_gateway/features/payment_methods/sslcommerz_pay.dart
 import 'package:all_payment_gateway/features/payment_methods/stripe_payment.dart';
 import 'package:all_payment_gateway/features/payment_methods/surjopay_pay.dart';
 import 'package:all_payment_gateway/features/payment_methods/uddokta_pay.dart';
+import 'package:all_payment_gateway/features/payment_methods/google_pay_and_apple_pay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -58,7 +59,7 @@ class AllPaymentButtonScreen extends StatelessWidget {
 					padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 14),
 					child: Row(
 						children: [
-											Container(
+								Container(
 												decoration: BoxDecoration(
 													color: _alphaColor(color, 0.12),
 													borderRadius: BorderRadius.circular(10),
@@ -90,6 +91,7 @@ class AllPaymentButtonScreen extends StatelessWidget {
 			),
 		);
 	}
+    
 
 	@override
 	Widget build(BuildContext context) {
@@ -273,11 +275,34 @@ class AllPaymentButtonScreen extends StatelessWidget {
 							_sectionTitle('Card Processing', 'Processed via Stripe / SSLCOMMERZ'),
 							spacer,
 							_gatewayCard(context,
-									icon: Icons.payment,
-									title: 'Google Pay',
-									subtitle: 'Tap to pay with Google Pay',
-									color: Colors.black,
-									onTap: () { _showPlaceholder(context, 'Google Pay'); }),
+								onTap: () {
+									Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+										return Scaffold(
+											appBar: AppBar(title: const Text('Google / Apple Pay')),
+											body: Padding(
+												padding: const EdgeInsets.all(16.0),
+												child: Center(
+													child: GooglePayAndApplePay.integerals().getPlatformButton(
+														onPaymentResult: (result) {
+															ScaffoldMessenger.of(context).showSnackBar(
+															SnackBar(content: Text('Payment result: \$result')),
+														);
+													},
+													),
+												),
+											),
+										);
+
+                    
+								}));
+
+			//  Navigator.push(context, MaterialPageRoute(builder: (context) => PayPage()),);
+								},
+								icon: Icons.payment,
+								title: 'Google Pay',
+								subtitle: 'Tap to pay with Google Pay',
+								color: Colors.black,
+							),
 							_gatewayCard(context,
 									icon: Icons.apple,
 									title: 'Apple Pay',

@@ -37,7 +37,8 @@ dependencies:
   bkash: 
   get: ^4.7.2 
   flutter_nagad: ^0.0.1
-  nagad_payment_gateway: ^0.1.0
+  
+  #nagad_payment_gateway: ^0.1.0
   flutter_sslcommerz: ^3.0.1
   flutter_dotenv: ^6.0.0
   uddoktapay: ^0.0.6
@@ -47,9 +48,10 @@ dependencies:
   dio: ^5.9.0
   shurjopay: 2.0.6
   flutter_paypal_payment: ^1.0.8
-  flutterwave_standard: ^1.1.0
   flutter_paystack_plus: ^2.0.4
-
+  wave: ^0.2.2
+  flutterwave_standard: ^1.1.0
+  pay: ^3.3.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,7 +77,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - .env
-  #   - images/a_dot_burr.jpeg
+    - assets/payment/apple_pay.json
+    - assets/payment/google_pay.json
+    - assets/google_and_apple_pay/google_pay.json
+    - assets/google_and_apple_pay/apple_pay.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
