@@ -1,5 +1,6 @@
 import 'package:all_payment_gateway/config/payment_config.dart';
 import 'package:all_payment_gateway/features/all_payment_button_screen/all_payment_button_screen.dart';
+import 'package:all_payment_gateway/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: AllPaymentButtonScreen(),
+      home: SplashScreen(),
     );
   }
 }

@@ -52,6 +52,7 @@ dependencies:
   wave: ^0.2.2
   flutterwave_standard: ^1.1.0
   pay: ^3.3.0
+  lottie: ^3.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
