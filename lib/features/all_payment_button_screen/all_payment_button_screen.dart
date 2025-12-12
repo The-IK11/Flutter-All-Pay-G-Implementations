@@ -276,27 +276,27 @@ class AllPaymentButtonScreen extends StatelessWidget {
 							spacer,
 							_gatewayCard(context,
 								onTap: () {
-									Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-										return Scaffold(
-											appBar: AppBar(title: const Text('Google / Apple Pay')),
-											body: Padding(
-												padding: const EdgeInsets.all(16.0),
-												child: Center(
-													child: GooglePayAndApplePay.integerals().getPlatformButton(
-														onPaymentResult: (result) {
-															ScaffoldMessenger.of(context).showSnackBar(
-															SnackBar(content: Text('Payment result: \$result')),
-														);
-													},
-													),
-												),
-											),
-										);
+								// 	Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+								// 		return Scaffold(
+								// 			appBar: AppBar(title: const Text('Google / Apple Pay')),
+								// 			body: Padding(
+								// 				padding: const EdgeInsets.all(16.0),
+								// 				child: Center(
+								// 					child: GooglePayAndApplePay.integerals().getPlatformButton(
+								// 						onPaymentResult: (result) {
+								// 							ScaffoldMessenger.of(context).showSnackBar(
+								// 							SnackBar(content: Text('Payment result: \$result')),
+								// 						);
+								// 					},
+								// 					),
+								// 				),
+								// 			),
+								// 		);
 
                     
-								}));
+								// }));
 
-			//  Navigator.push(context, MaterialPageRoute(builder: (context) => PayPage()),);
+			 Navigator.push(context, MaterialPageRoute(builder: (context) => PayPage()),);
 								},
 								icon: Icons.payment,
 								title: 'Google Pay',
@@ -305,10 +305,11 @@ class AllPaymentButtonScreen extends StatelessWidget {
 							),
 							_gatewayCard(context,
 									icon: Icons.apple,
+
 									title: 'Apple Pay',
 									subtitle: 'Tap to pay with Apple Pay',
 									color: Colors.black,
-									onTap: () { _showPlaceholder(context, 'Apple Pay'); }),
+									onTap: () {  Navigator.push(context, MaterialPageRoute(builder: (context) => PayPage()),); }),
 							_gatewayCard(context,
 									icon: Icons.credit_card, title: 'Visa / Mastercard', subtitle: 'Via Stripe or SSLCOMMERZ'),
 							_gatewayCard(context,
